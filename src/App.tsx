@@ -1,15 +1,14 @@
 import React from 'react'
-import styles from './styles.module.scss'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages/home/components'
+import { News } from './pages/news/components'
 
 function App() {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.wrapper__content}>
-        Statr codding
-        <div className={styles.wrapper__content__text}>HomePage</div>
-        <div className={styles.wrapper__content__text}>NewsPage</div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/searchNews" element={<News />} />
+    </Routes>
   )
 }
 

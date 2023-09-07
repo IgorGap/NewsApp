@@ -1,0 +1,20 @@
+.inputWrapper {
+  position: relative;
+}
+
+.wrapInput{
+  padding: 0px 25px;
+  height: 30px;
+  border-radius: 3px;
+  flex: 1;
+  width: 100%;
+  border-radius: 8px;
+
+}
+.icon {
+  position: absolute;
+  top: 55%;
+  right: 167px; 
+  transform: translateY(-50%); 
+
+}

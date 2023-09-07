@@ -1,0 +1,27 @@
+.wrapSearchBar{
+  display: flex;
+  background-color: rgba(78, 124, 136, 0.817);
+  border-radius: 8px;
+  padding: 25px;
+  min-width: 350px;
+  flex-direction: column;
+  gap: 30px;
+  &__infoTop{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  &__infoMiddle{
+    display: flex;
+    margin-left: 200px;
+  }
+  &__infoBottom{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    flex: 1;
+    width: 70%;
+  }
+}
+

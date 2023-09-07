@@ -1,0 +1,9 @@
+.wrappHome{
+  padding: 5% 35%;
+  @media (max-width: 1200px) {
+    padding: 5% 30%;
+    }
+    @media (max-width: 600px) {
+      padding: 5%  20%;
+      }
+}
