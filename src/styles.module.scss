@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  text-align: center;
+  border: 2px solid red;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  margin: 10px;
+  &__content{
+  color: #0755ca;
+  font-weight: 600;
+  font-size: 19px;
+  cursor: pointer;
+  }
+ }
+
+
