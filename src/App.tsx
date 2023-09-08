@@ -2,13 +2,17 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Home } from './pages/home/components'
 import { News } from './pages/news/components'
+import { Provider } from 'react-redux'
+import store from './Store/store'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/searchNews" element={<News />} />
-    </Routes>
+    <Provider store={store}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/searchNews" element={<News />} />
+      </Routes>
+    </Provider>
   )
 }
 
