@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 import { useSelector } from 'react-redux'
 
 import { ContentCard } from '../../../components/TaskCard/Content'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { RootState } from '../../../Store/reducers'
 
 export const Home: React.FC = () => {

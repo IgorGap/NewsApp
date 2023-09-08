@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { format } from 'date-fns'
-import { ButtinCard } from '../Button'
 import { Link } from 'react-router-dom'
 
 interface CardFormProps {
@@ -26,18 +25,16 @@ export const CardForm = ({
     <>
       <div className={styles.cardFormWrapp}>
         <div className={styles.cardFormWrapp__img}>
-          <img style={{ width: '100%', height:'100%' }} src={src} alt="img" />
+          <img style={{ width: '100%', height: '100%', borderTopRightRadius:'10px', borderTopLeftRadius:'10px' }} src={src} alt="img" />
         </div>
         <div className={styles.cardFormWrapp__date}>
           Опубликовано: {formattedDate}
         </div>
-        <div>Раздел: {sectionName}</div>
+        <div className={styles.cardFormWrapp__tema}>Раздел: {sectionName}</div>
         <div className={styles.cardFormWrapp__title}>Описание: {webTitle}</div>
-      </div>
-      <div className={styles.cardFormWrapp__btn}>
-        {/* <ButtinCard /> */}
-
-        <Link to={`/searchNews/${articleId}}`}>подробнее</Link>
+        <div className={styles.cardFormWrapp__btn}>
+          <Link to={`/searchNews/${articleId}}`}>подробнее</Link>
+        </div>
       </div>
     </>
   )
