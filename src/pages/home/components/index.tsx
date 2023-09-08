@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
-import { ContetnCard } from '../../../components/TaskCard/Content'
+import { ContentCard } from '../../../components/TaskCard/Content'
 
 export const Home: React.FC = () => {
   const { articles, loading } = useSelector((state: any) => state.article)
@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <ContetnCard />
+      <ContentCard />
       {loading && <div style={{ marginTop: '100px' }}>Loading....</div>}
     </>
   )
