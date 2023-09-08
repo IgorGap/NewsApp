@@ -20,10 +20,11 @@ export const ContentCard: React.FC = () => {
   const [selectedValuePage, setSelectedValuePage] = useState('')
   const [inputValueSearchBar, setInputValueSearchBar] = useState('')
   const [selectedRelevance, setSelectedRelevance] = useState('')
-
+  console.log('articles', articles)
   // const section = inputValueSearchBar
   const relevance = selectedRelevance
   console.log('relevance CONTENT', relevance)
+  // console.log('filelds', fields)
 
   // const handleSelectedTitleChange = (value: string) => {
   //   setTitleFromSelected(value)
@@ -65,6 +66,8 @@ export const ContentCard: React.FC = () => {
         {articles.map((article: Article) => (
           <div className={styles.card} key={article.id}>
             <CardForm
+              src={article?.fields?.thumbnail}
+              articleId={article.id}
               webTitle={article?.webTitle ?? ''}
               sectionName={article?.sectionName ?? ''}
               webPublicationDate={article?.webPublicationDate ?? ''}

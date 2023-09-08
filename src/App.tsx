@@ -10,7 +10,7 @@ function App() {
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/searchNews" element={<News />} />
+        <Route path="/searchNews/:id*" element={<News />} />
       </Routes>
     </Provider>
   )

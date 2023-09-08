@@ -15,14 +15,19 @@ export interface Article {
   isHosted: boolean
   pillarId: string
   pillarName: string
+  fields:{
+    thumbnail: string
+    bodyText: string
+  }
 }
 
-interface ArticleState {
+export interface ArticleState {
   articles: Article[]
   loading: boolean
   error: any
   pages: number
   total: number
+  showElements: string;
 }
 const initialState: ArticleState = {
   articles: [],
@@ -30,6 +35,7 @@ const initialState: ArticleState = {
   loading: false,
   pages: 0,
   total: 0,
+  showElements: ''
 }
 
 const ArticleSlice = createSlice({
@@ -43,6 +49,7 @@ const ArticleSlice = createSlice({
     })
     builder.addCase(getArticles.fulfilled, (state, action) => {
       // В зависимости от типа действия добавляем или перезаписываем новости
+      console.log('action.payload?.response?.results', action.payload?.response?.results)
       if (action.meta.arg.mode === 'add') {
         state.articles = [...state.articles, ...action.payload?.response?.results];
       } else if (action.meta.arg.mode === 'replace') {

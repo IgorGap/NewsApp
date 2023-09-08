@@ -36,6 +36,7 @@ export const Button = ({
             currentPage: currentPage + 1,
             mode: 'replace',
             orderBy: selectedRelevance,
+            showElements:'image'
           }) as any
         )
       }}

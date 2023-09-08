@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 3px;
   gap: 10px;
+  
   &__img{
     border: 2px solid red;
     min-width: 100%;
@@ -16,6 +17,10 @@
   }
   &__title{
     font-weight: 600;
+  }
+  &__btn{
+    display: flex;
+    justify-content: end;
   }
 
 }
