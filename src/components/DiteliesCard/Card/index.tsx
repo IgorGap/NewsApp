@@ -21,8 +21,6 @@ export const DiteliesCard = ({
 }: DiteliesCardProps) => {
   const date = new Date(webPublicationDate)
   const formattedDate = format(date, 'd MMMM yyyy, h:mm a')
-  console.log('formattedDate111', formattedDate)
-  console.log('webPublicationDate222', webPublicationDate)
   // const paragraphs = bodyText.split(('. '))
   const sentences = bodyText.split('. ')
   const paragraphGroups = []
@@ -59,7 +57,11 @@ export const DiteliesCard = ({
         </div>
         <div className={styles.wrapp__textPhoto}>
           <div className={styles.wrapp__url}>
-            <img style={{borderRadius:'5px'}} src={srcUrl} alt="img"></img>
+            <img
+              style={{ borderRadius: '5px' }}
+              src={srcUrl}
+              alt="img"
+            ></img>
           </div>
           <div className={styles.wrapp__subtitle}>
             <div className={styles.wrapp__text}>

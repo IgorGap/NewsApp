@@ -32,7 +32,7 @@ export const SearchBar = ({
         <div className={styles.wrapSearchBar__infoTop}>
           <Input
             inputValueSearchBar={inputValueSearchBar}
-            setInputValueSearchBar={setInputValueSearchBar} 
+            setInputValueSearchBar={setInputValueSearchBar}
           />
           <Button
             selectedValuePage={selectedValuePage}

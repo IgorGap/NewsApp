@@ -5,9 +5,10 @@ import { useDispatch } from 'react-redux'
 import { getArticles } from '../../../Store/action'
 import { useSelector } from 'react-redux'
 import { Article } from '../../../Store/articleSlice'
-import { CardForm } from '../Card'
+import { NewsList } from '../Card'
+import { useWindowResize } from '../../../hook/useWindowResize'
 
-export const ContentCard: React.FC = () => {
+export const Content: React.FC = () => {
   const dispatch = useDispatch()
   const [currentPage, setCurrentPage] = useState(1)
   const apiKey = '77d77f40-f22b-4508-aeda-d265ac8cf1cb'
@@ -20,20 +21,16 @@ export const ContentCard: React.FC = () => {
   const [selectedValuePage, setSelectedValuePage] = useState('')
   const [inputValueSearchBar, setInputValueSearchBar] = useState('')
   const [selectedRelevance, setSelectedRelevance] = useState('')
-  console.log('articles', articles)
-  // const section = inputValueSearchBar
-  const relevance = selectedRelevance
-  console.log('relevance CONTENT', relevance)
-  // console.log('filelds', fields)
+  const { size } = useWindowResize();
 
-  // const handleSelectedTitleChange = (value: string) => {
-  //   setTitleFromSelected(value)
-  // }
-  // console.log('titleFromSelected', titleFromSelected)
-  // const pageSize =
-  //   Number(selectedValuePage) === 0 ? 3 : Number(selectedValuePage)
   return (
     <div className={styles.mainContetnCard}>
+      {size > 850 ? (
+        <div className={styles.logoText}>News and Facts</div>
+      ) : (
+        <div className={styles.logoTextSize}>NAF</div>
+      )}
+
       <div className={styles.wrappHome}>
         <SearchBar
           selectedValuePage={selectedValuePage}
@@ -65,7 +62,7 @@ export const ContentCard: React.FC = () => {
       <div className={styles.cardsList}>
         {articles.map((article: Article) => (
           <div className={styles.card} key={article.id}>
-            <CardForm
+            <NewsList
               src={article?.fields?.thumbnail}
               articleId={article.id}
               webTitle={article?.webTitle ?? ''}

@@ -3,8 +3,7 @@ import styles from './styles.module.scss'
 
 import { useSelector } from 'react-redux'
 
-import { ContentCard } from '../../../components/TaskCard/Content'
-// import { Link } from 'react-router-dom'
+import { Content } from '../../../components/TaskCard/Content'
 import { RootState } from '../../../Store/reducers'
 
 export const Home: React.FC = () => {
@@ -31,19 +30,20 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <div className={styles.empty}>
-        <div className={styles.empty__inner}>
-          <div className={styles.empty__title}>
-            <ContentCard />
-            {loading && <div style={{ marginTop: '100px' }}>Loading....</div>}
-          </div>
-          <div className={styles.empty__button}>
-            {/* <Link to="/searchNews">подробнее</Link> */}
-          </div>
+      <div className={styles.wrapp}>
+        <Content />
+        <div className={styles.loading}>
+          {loading && (
+            <div
+              style={{ marginTop: '-80px' }}
+              className={styles.loaderContainer}
+            >
+              <div className={styles.loader}></div>
+              <p>Loading...</p>
+            </div>
+          )}
         </div>
       </div>
-      {/* <ContentCard />
-      {loading && <div style={{ marginTop: '100px' }}>Loading....</div>} */}
     </>
   )
 }

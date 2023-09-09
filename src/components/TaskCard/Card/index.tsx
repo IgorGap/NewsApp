@@ -12,7 +12,7 @@ interface CardFormProps {
   // setInputValueSearchBar: (value: string) => void
 }
 
-export const CardForm = ({
+export const NewsList = ({
   articleId,
   webTitle,
   sectionName,
