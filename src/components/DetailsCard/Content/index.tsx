@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { DiteliesCard } from '../Card'
+import { DetailsCard } from '../Card'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../Store/reducers'
@@ -13,7 +13,7 @@ export const DiteliesContent: React.FC = () => {
   console.log('currentArticle', currentArticle)
   return (
     <div className={styles.mainContetnCard}>
-      <DiteliesCard
+      <DetailsCard
         srcUrl={currentArticle?.fields?.thumbnail}
         bodyText={currentArticle?.fields?.bodyText ?? ''}
         webPublicationDate={currentArticle?.webPublicationDate ?? ''}

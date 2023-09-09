@@ -7,10 +7,13 @@
   &__title{
     font-weight: 600;
     font-size: 19px;
+    padding: 20px;
   }
   &__subtitle{
-    height: 80%;
-  overflow: scroll;
+    // height: 80%;
+  // overflow: scroll;
+  border: 1px solid red;
+  flex-grow: 1;
   color: rgb(1, 74, 30);
   }
   &__date{
@@ -42,25 +45,31 @@
   &__text{
     font-weight: 600;
     font-size: 20px;
-    padding-bottom: 20px;
     color: black;
+    flex-grow: 1;
+    min-width: 100px
   }
   &__textPhoto{
-    display: flex;
-    height: 90%;
-    flex-direction: row;
-    justify-content: space-between;
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      }
+  }
+  &__url{   
+    margin-right: 20px;
+    height: fit-content;
+    border: 1px solid blue;
+    float: left;
     @media (max-width: 992px) {
       flex-direction: column;
       gap: 10px;
       }
   }
-  &__url{   
-    margin-right: 20px;
-  }
 }
 .button{
-  margin-top:100px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;

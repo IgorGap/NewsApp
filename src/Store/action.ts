@@ -17,11 +17,10 @@ export const getArticles = createAsyncThunk(
     },
     thunkAPI
   ) => {
-    const { apiKey, section, pageSize, currentPage, orderBy, showElements } = arg
-    // const showElements = 'image'
+    const { apiKey, section, pageSize, currentPage, orderBy} = arg
     try {
       const res = await fetch(
-        `https://content.guardianapis.com/search?section=${section}&api-key=${apiKey}&page-size=${pageSize}&page=${currentPage}&order-by=${orderBy}&show-fields=thumbnail,bodyText&show-refinements=all&order-by=relevance&show-elements=image`
+        `https://content.guardianapis.com/search?section=${section || 'football'}&api-key=${apiKey}&page-size=${pageSize}&page=${currentPage}&order-by=${orderBy}&show-fields=thumbnail,bodyText&show-refinements=all&order-by=relevance&show-elements=image`
       ).then((data) => data.json())
       return res
     } catch (error) {

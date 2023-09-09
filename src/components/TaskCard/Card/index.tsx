@@ -25,7 +25,16 @@ export const NewsList = ({
     <>
       <div className={styles.cardFormWrapp}>
         <div className={styles.cardFormWrapp__img}>
-          <img style={{ width: '100%', height: '100%', borderTopRightRadius:'10px', borderTopLeftRadius:'10px' }} src={src} alt="img" />
+          <img
+            style={{
+              width: '100%',
+              height: '100%',
+              borderTopRightRadius: '10px',
+              borderTopLeftRadius: '10px',
+            }}
+            src={src}
+            alt="img"
+          />
         </div>
         <div className={styles.cardFormWrapp__date}>
           Опубликовано: {formattedDate}
@@ -33,7 +42,12 @@ export const NewsList = ({
         <div className={styles.cardFormWrapp__tema}>Раздел: {sectionName}</div>
         <div className={styles.cardFormWrapp__title}>Описание: {webTitle}</div>
         <div className={styles.cardFormWrapp__btn}>
-          <Link to={`/searchNews/${articleId}}`}>подробнее</Link>
+          <Link
+            to={`/searchNews/${articleId}}`}
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            Details →
+          </Link>
         </div>
       </div>
     </>

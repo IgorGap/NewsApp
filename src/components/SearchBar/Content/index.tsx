@@ -2,57 +2,41 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { Input } from '../Input'
 import { Button } from '../Button/Button'
-import { SelectTitle } from '../SelectTitle/SelectTitle'
-import { SelectPage } from '../SelectPage/SelectPage'
+import { SortSelect } from '../SortSelect/SortSelect'
+import { CountPerPageSelect } from '../CountPerPageSelect/CountPerPageSelect'
 
 interface SearchBarProps {
-  inputValueSearchBar: string
-  setInputValueSearchBar: (value: string) => void
-  selectedValuePage: string
-  setSelectedValuePage: (value: string) => void
-  currentPage: number
-  setCurrentPage: any
-  selectedRelevance: string
-  setSelectedRelevance: (value: string) => void
+  searchParameters: any
+  onChangeParameters: (type: string, value: number | string) => void
 }
 
 export const SearchBar = ({
-  inputValueSearchBar,
-  setInputValueSearchBar,
-  selectedValuePage,
-  setSelectedValuePage,
-  currentPage,
-  setCurrentPage,
-  selectedRelevance,
-  setSelectedRelevance,
+  searchParameters,
+  onChangeParameters,
 }: SearchBarProps) => {
+  const { section, sort, countPerPage } = searchParameters
+
   return (
     <>
       <div className={styles.wrapSearchBar}>
         <div className={styles.wrapSearchBar__infoTop}>
           <Input
-            inputValueSearchBar={inputValueSearchBar}
-            setInputValueSearchBar={setInputValueSearchBar}
+            inputValueSearchBar={section}
+            onChange={(value: string) => onChangeParameters('section', value)}
           />
-          <Button
-            selectedValuePage={selectedValuePage}
-            inputValueSearchBar={inputValueSearchBar}
-            setInputValueSearchBar={setInputValueSearchBar}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            selectedRelevance={selectedRelevance}
-            setSelectedRelevance={setSelectedRelevance}
-          />
+          <Button {...{ searchParameters }} />
         </div>
         <div className={styles.wrapSearchBar__infoMiddle}></div>
         <div className={styles.wrapSearchBar__infoBottom}>
-          <SelectTitle
-            selectedRelevance={selectedRelevance}
-            setSelectedRelevance={setSelectedRelevance}
+          <SortSelect
+            value={sort}
+            onChange={(value: string) => onChangeParameters('sort', value)}
           />
-          <SelectPage
-            selectedValuePage={selectedValuePage}
-            setSelectedValuePage={setSelectedValuePage}
+          <CountPerPageSelect
+            countPerPage={countPerPage}
+            onChange={(value: number) =>
+              onChangeParameters('countPerPage', value)
+            }
           />
         </div>
       </div>

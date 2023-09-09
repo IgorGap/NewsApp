@@ -4,25 +4,17 @@ import { IconShearch } from '../../../assets/icons'
 
 interface InputProps {
   inputValueSearchBar: string
-  setInputValueSearchBar: (value: string) => void
+  onChange: (value: string) => void
 }
 
-export const Input = ({
-  inputValueSearchBar,
-  setInputValueSearchBar,
-}: InputProps) => {
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value
-    setInputValueSearchBar(newValue)
-  }
-
+export const Input = ({ inputValueSearchBar, onChange }: InputProps) => {
   return (
     <div className={styles.inputWrapper}>
       <input
         placeholder="Поиск"
         className={styles.wrapInput}
         value={inputValueSearchBar}
-        onChange={handleInputChange}
+        onChange={(e) => onChange(e.target.value)}
       ></input>
       <span className={styles.icon}>
         <IconShearch />

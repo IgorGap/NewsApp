@@ -23,13 +23,11 @@
   &__btn{
     display: flex;
     justify-content: center;
-    border: 2px solid rgba(95, 158, 160, 0.658);
     border-radius: 4px;
     width: 32%;
     padding:5px;
     margin: 10px 5px;
-    // margin-bottom: 20px;
-    // margin-left: 10px;
+    margin-left: auto;
   }
   &__tema{
     padding: 0px 5px;

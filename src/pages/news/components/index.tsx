@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { DiteliesContent } from '../../../components/DiteliesCard/Content'
+import { DiteliesContent } from '../../../components/DetailsCard/Content'
 
 export const News: React.FC = () => {
   return (

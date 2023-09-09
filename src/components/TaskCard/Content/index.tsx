@@ -17,11 +17,15 @@ export const Content: React.FC = () => {
     (state: any) => state.article
   )
   // const [titleFromSelected, setTitleFromSelected] = useState('')
+  const [searchParameters, setSearchParameters] = useState({
+    section: '',
+    countPerPage: 30,
+    sort: 'newest',
+  })
 
-  const [selectedValuePage, setSelectedValuePage] = useState('')
-  const [inputValueSearchBar, setInputValueSearchBar] = useState('')
-  const [selectedRelevance, setSelectedRelevance] = useState('')
-  const { size } = useWindowResize();
+  const { size } = useWindowResize()
+
+  console.log('searchparams', searchParameters)
 
   return (
     <div className={styles.mainContetnCard}>
@@ -33,14 +37,12 @@ export const Content: React.FC = () => {
 
       <div className={styles.wrappHome}>
         <SearchBar
-          selectedValuePage={selectedValuePage}
-          setSelectedValuePage={setSelectedValuePage}
-          inputValueSearchBar={inputValueSearchBar}
-          setInputValueSearchBar={setInputValueSearchBar}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          selectedRelevance={selectedRelevance}
-          setSelectedRelevance={setSelectedRelevance}
+          {...{
+            searchParameters,
+          }}
+          onChangeParameters={(type, value) =>
+            setSearchParameters((prev) => ({ ...prev, [type]: value }))
+          }
         />
       </div>
       {/* <button
@@ -59,6 +61,11 @@ export const Content: React.FC = () => {
       >
         добавить
       </button> */}
+      <div>
+        {!loading && !articles.length && (
+          <p>Упс... ничего не найдено. Попробуйте изменить параметры поиска</p>
+        )}
+      </div>
       <div className={styles.cardsList}>
         {articles.map((article: Article) => (
           <div className={styles.card} key={article.id}>

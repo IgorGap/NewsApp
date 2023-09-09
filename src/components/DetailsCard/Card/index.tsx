@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
 import { DateIcon, IconHome, ReadIcon } from '../../../assets/icons'
 
-interface DiteliesCardProps {
+interface DetailsCardProps {
   bodyText: string
   srcUrl?: any
   webPublicationDate: string
@@ -12,14 +12,14 @@ interface DiteliesCardProps {
   webUrl: any
 }
 
-export const DiteliesCard = ({
+export const DetailsCard = ({
   srcUrl,
   bodyText,
   webPublicationDate,
   webTitle,
   webUrl,
-}: DiteliesCardProps) => {
-  const date = new Date(webPublicationDate)
+}: DetailsCardProps) => {
+  const date = webPublicationDate ? new Date(webPublicationDate) : new Date()
   const formattedDate = format(date, 'd MMMM yyyy, h:mm a')
   // const paragraphs = bodyText.split(('. '))
   const sentences = bodyText.split('. ')
@@ -34,7 +34,6 @@ export const DiteliesCard = ({
     }
   })
 
-  // Если остались предложения после последней группы, добавьте их
   if (currentParagraph !== '') {
     paragraphGroups.push(currentParagraph)
   }
@@ -56,21 +55,17 @@ export const DiteliesCard = ({
           </div>
         </div>
         <div className={styles.wrapp__textPhoto}>
-          <div className={styles.wrapp__url}>
             <img
-              style={{ borderRadius: '5px' }}
+              style={{ borderRadius: '5px', float: 'left', marginRight: '15px', marginBottom: '5px' }}
               src={srcUrl}
               alt="img"
             ></img>
-          </div>
-          <div className={styles.wrapp__subtitle}>
             <div className={styles.wrapp__text}>
               The most important of the retelling
             </div>
             {paragraphGroups.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
-          </div>
         </div>
 
         <div className={styles.button}>
