@@ -12,11 +12,9 @@ export const CountPerPageSelect = ({
   onChange,
 }: CountPerPageSelectProps) => {
   const options = [
-    { value: 1, title: 1 },
-    { value: 3, title: 3 },
-    { value: 5, title: 5 },
+    { value: 6, title: 6 },
     { value: 10, title: 10 },
-    { value: 30, title: 30 },
+    { value: 20, title: 20 },
     { value: 50, title: 50 },
   ]
   return (

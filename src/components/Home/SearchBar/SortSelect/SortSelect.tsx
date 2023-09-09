@@ -7,10 +7,7 @@ interface SortSelectProps {
   onChange: (value: string) => void
 }
 
-export const SortSelect = ({
-  value,
-  onChange,
-}: SortSelectProps) => {
+export const SortSelect = ({ value, onChange }: SortSelectProps) => {
   const options = [
     { value: 'newest', title: 'свежие новости' },
     { value: 'oldest', title: 'старые новости' },
@@ -18,8 +15,8 @@ export const SortSelect = ({
   ]
   return (
     <select
-    value={value}
-      className={styles.selectTitle}
+      value={value}
+      className={styles.select}
       onChange={(e) => onChange(e.target.value)}
     >
       {options.map((option) => (

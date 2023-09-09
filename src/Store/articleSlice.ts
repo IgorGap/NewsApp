@@ -48,8 +48,6 @@ const ArticleSlice = createSlice({
       state.error = null;
     })
     builder.addCase(getArticles.fulfilled, (state, action) => {
-      // В зависимости от типа действия добавляем или перезаписываем новости
-      console.log('action.payload?.response?.results', action.payload?.response?.results)
       if (action.meta.arg.mode === 'add') {
         state.articles = [...state.articles, ...action.payload?.response?.results];
       } else if (action.meta.arg.mode === 'replace') {

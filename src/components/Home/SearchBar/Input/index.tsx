@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
-import { IconShearch } from '../../../assets/icons'
+import { IconShearch } from '../../../../assets/icons'
 
 interface InputProps {
   inputValueSearchBar: string

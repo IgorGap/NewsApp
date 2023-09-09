@@ -1,24 +1,25 @@
 import React from 'react'
-import styles from './styles.module.scss'
 import { format } from 'date-fns'
 import { Link } from 'react-router-dom'
 
-interface CardFormProps {
+import styles from './styles.module.scss'
+
+
+interface NewsCardProps {
   webTitle: string
   sectionName: string
   articleId: string
   webPublicationDate: string
-  src?: any
-  // setInputValueSearchBar: (value: string) => void
+  src?: string
 }
 
-export const NewsList = ({
+export const NewsCard = ({
   articleId,
   webTitle,
   sectionName,
   webPublicationDate,
   src,
-}: CardFormProps) => {
+}: NewsCardProps) => {
   const date = new Date(webPublicationDate)
   const formattedDate = format(date, 'd MMMM yyyy, h:mm a')
   return (

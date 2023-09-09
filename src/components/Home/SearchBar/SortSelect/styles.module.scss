@@ -1,6 +1,7 @@
-.selectTitle{
+.select{
   width: 55%;
   height: 33px;
+  cursor: pointer;
   border-radius: 8px;
   @media (max-width: 400px) {
     width: 80%;

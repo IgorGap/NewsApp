@@ -1,15 +1,16 @@
 import React from 'react'
-import styles from './styles.module.scss'
-import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
+import { Link } from 'react-router-dom'
+
+import styles from './styles.module.scss'
 import { DateIcon, IconHome, ReadIcon } from '../../../assets/icons'
 
 interface DetailsCardProps {
   bodyText: string
-  srcUrl?: any
+  srcUrl?: string
   webPublicationDate: string
   webTitle: string
-  webUrl: any
+  webUrl: string
 }
 
 export const DetailsCard = ({
@@ -21,7 +22,6 @@ export const DetailsCard = ({
 }: DetailsCardProps) => {
   const date = webPublicationDate ? new Date(webPublicationDate) : new Date()
   const formattedDate = format(date, 'd MMMM yyyy, h:mm a')
-  // const paragraphs = bodyText.split(('. '))
   const sentences = bodyText.split('. ')
   const paragraphGroups = []
   let currentParagraph = ''
@@ -55,22 +55,29 @@ export const DetailsCard = ({
           </div>
         </div>
         <div className={styles.wrapp__textPhoto}>
-            <img
-              style={{ borderRadius: '5px', float: 'left', marginRight: '15px', marginBottom: '5px' }}
-              src={srcUrl}
-              alt="img"
-            ></img>
-            <div className={styles.wrapp__text}>
-              The most important of the retelling
-            </div>
-            {paragraphGroups.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          <img
+            style={{
+              borderRadius: '5px',
+              float: 'left',
+              marginRight: '15px',
+              marginBottom: '5px',
+            }}
+            src={srcUrl}
+            alt="img"
+          ></img>
+          <div className={styles.wrapp__text}>
+            The most important of the retelling
+          </div>
+          {paragraphGroups.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
 
         <div className={styles.button}>
           <IconHome />
-          <Link to="/">Home</Link>
+          <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
+            Home
+          </Link>
         </div>
       </div>
     </>
