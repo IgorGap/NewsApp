@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# News And Facts
+Сайт для поиска новостей на английском языке
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Стек
 
-## Available Scripts
+1. React
+2. Typescript
+3. React-Router-Dom (v6)
+4. CSS-modules
+5. Redux toolkit
 
-In the project directory, you can run:
 
-### `npm start`
+### Функционал
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Основная страница, на которой можно найти новости по ключевому слову в поисковом меню, например, "books", "Sports" и т.д.
+2. Также можно выбрать количество новостных карточек, которые будут отображаться. Выберите цифру в поле "Page", укажите ключевое слово и нажмите 'Find'. Новостные карточки можно фильтровать по релевантности и дате новости.
+3. Реализована подгрузка новостей со следующей страницы при скролле до последней новости на странице.
+4. Нажав на кнопку "Подробнее" на карточке, вы перейдете на вторую страницу и увидите подробную информацию. Также можно перейти на сайт новостного портала, нажав кнопку "read article".
+5. PA-приложение, использующее Guardian API в качестве бэкенда.
+6. Реализация для десктопных и мобильных экранов.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Архитектура
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Архитектура проекта состоит из
+1. Страниц (Pages)
+3. Компонентов (Components)
 
-### `npm run build`
+### Начало работы
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Установка зависимостей
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Запуск приложения
 
-### `npm run eject`
+```
+yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Перейти на сайт можно по ссылке:
+https://igorgap.github.io/NewsApp/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="1440" alt="mainPage" src="./readme-img/1e.PNG">
+<p>
+</p>
+<img width="1440" alt="mainPage" src="./readme-img/2e.PNG">
+<p>
+</p>
+<img width="1440" alt="mainPage" src="./readme-img/3e.PNG">
+<p>
+</p>
+<img width="1440" alt="mainPage" src="./readme-img/4e.PNG">
+<p>
+</p>
+<img width="1440" alt="mainPage" src="./readme-img/5e.PNG">
+<p>

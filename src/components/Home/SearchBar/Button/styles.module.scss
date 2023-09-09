@@ -1,0 +1,11 @@
+.wrapBtn{
+height: 33px;
+cursor: pointer;
+padding: 0px 40px;
+border-radius: 8px;
+border: 2px solid rgb(254, 254, 254);
+background-color: rgb(255, 255, 255);
+@media (max-width: 400px) {
+  padding: 0px 80px;
+    }
+}

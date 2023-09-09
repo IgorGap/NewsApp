@@ -1,15 +1,19 @@
 import React from 'react'
-import styles from './styles.module.scss'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages/home/components'
+import { News } from './pages/news/components'
+import { Provider } from 'react-redux'
+import store from './Store/store'
 
 function App() {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.wrapper__content}>
-        Statr codding
-        <div className={styles.wrapper__content__text}>HomePage</div>
-        <div className={styles.wrapper__content__text}>NewsPage</div>
-      </div>
-    </div>
+    <Provider store={store}>
+      <Routes>
+      <Route path="/" element={<Home />} />
+        <Route path="/NewsApp" element={<Home />} />
+        <Route path="/searchNews/:id*" element={<News />} />
+      </Routes>
+    </Provider>
   )
 }
 

@@ -1,0 +1,93 @@
+.wrapp{
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap:30px;
+  &__title{
+    font-weight: 600;
+    font-size: 19px;
+    padding: 20px;
+  }
+  &__subtitle{
+  border: 1px solid red;
+  flex-grow: 1;
+  color: rgb(1, 74, 30);
+  }
+  &__date{
+    color: rgb(72, 112, 63);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+  }
+  &__dateLink{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 10px;
+      }
+  }
+  &__link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    
+  }
+  &__text{
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    flex-grow: 1;
+    min-width: 100px
+  }
+  &__textPhoto{
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      }
+  }
+  &__url{   
+    margin-right: 20px;
+    height: fit-content;
+    border: 1px solid blue;
+    float: left;
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 10px;
+      }
+  }
+}
+.button{
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  @media (max-width: 400px) {
+   margin-top:60px
+    }
+}
+p {
+  text-indent: 1em; 
+  margin-bottom: 10px; 
+}
+img{
+  @media (max-width: 992px) {
+    width: 400px;
+    }
+  @media (max-width: 792px) {
+      width: 350px;
+    }
+  @media (max-width: 592px) {
+        width: 250px;
+    }
+}
